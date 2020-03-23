@@ -1,7 +1,0 @@
-﻿@mixin text_align($breakpoint-value, $id-class) {
-  .text-align {
-    &.#{$id-class} {
-      text-align: #{$breakpoint-value} !important;
-    }
-  }
-}
