@@ -1,0 +1,101 @@
+@{
+    ViewBag.Title = "Front End";
+    Layout = "~/Views/Shared/Base/_Layout.cshtml";
+}
+
+<style>
+    #form {
+        padding: 30px 30px 50px;
+    }
+    .ui.form .field {
+        position: relative;
+    }
+    .print {
+
+    }
+</style>
+
+<script>
+    function mostraTexto() {
+        var printNome = document.getElementById("nome").value;
+        document.getElementById("printNome").innerHTML = printNome;
+
+        var printEmail = document.getElementById("email").value;
+        document.getElementById("printEmail").innerHTML = printEmail;
+
+        var printTelefone = document.getElementById("telefone").value;
+        document.getElementById("printTelefone").innerHTML = printTelefone;
+
+        var printAssunto = document.getElementById("assunto").value;
+        document.getElementById("printAssunto").innerHTML = printAssunto;
+
+        var printMensagem = document.getElementById("mensagem").value;
+        document.getElementById("printMensagem").innerHTML = printMensagem;
+    }
+    $(document).ready(function () {
+        $('.enviar').on('click', function(){
+        var nome = $('#nome').val();
+        var email = $('#email').val();
+        var telefone = $('#telefone').val();
+        var assunto = $('#assunto').val();
+        var mensagem = $('#mensagem').val();
+
+        sessionStorage.setItem('nome', nome);
+        sessionStorage.setItem('email', email);
+        sessionStorage.setItem('telefone', telefone);
+        sessionStorage.setItem('assunto', assunto);
+        sessionStorage.setItem('mensagem', mensagem);
+
+        });
+
+    });
+</script>
+
+<div class="ui grid">
+    <div id="form" class="two column row">
+        <div class="column">
+            <form class="ui form">
+                <div class="required field">
+                    <label>Nome</label>
+                    <input type="text" name="nome" id="nome" onkeyup="mostraTexto()" required>
+                </div>
+                <div class="required field">
+                    <label>E-mail</label>
+                    <input type="email" name="email" id="email" onkeyup="mostraTexto()" required>
+                </div>
+                <div class="required field">
+                    <label>Telefone</label>
+                    <input pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" type="tel" name="telefone" id="telefone" placeholder="(XX) XXXX-XXXX" onkeyup="mostraTexto()" required>
+                </div>
+                <div class="required field">
+                    <label>Assunto</label>
+                    <input type="text" name="assunto" id="assunto" onkeyup="mostraTexto()" required>
+                </div>
+                <div class="required field">
+                    <label>Mensagem</label>
+                    <textarea name="mensagem" id="mensagem" onkeyup="mostraTexto()" required></textarea>
+                </div>
+                <button class="ui button enviar" type="submit">Enviar</button>
+            </form>
+        </div>
+        <div class="column">
+            <form class="ui form">
+                <div class="required field">
+                    <p id="printNome" class="print"></p>
+                </div>
+                <div class="required field">
+                    <p id="printEmail" class="print"></p>
+                </div>
+                <div class="required field">
+                    <p id="printTelefone" class="print"></p>
+                </div>
+                <div class="required field">
+                    <p id="printAssunto" class="print"></p>
+                </div>
+                <div class="required field">
+                    <p id="printMensagem" class="print"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
