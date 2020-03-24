@@ -17,19 +17,19 @@
 
 <script>
     function mostraTexto() {
-        var printNome = document.getElementById("nome").value;
+        var printNome = document.getElementById("editNome").value;
         document.getElementById("printNome").innerHTML = printNome;
 
-        var printEmail = document.getElementById("email").value;
+        var printEmail = document.getElementById("editEmail").value;
         document.getElementById("printEmail").innerHTML = printEmail;
 
-        var printTelefone = document.getElementById("telefone").value;
+        var printTelefone = document.getElementById("editTelefone").value;
         document.getElementById("printTelefone").innerHTML = printTelefone;
 
-        var printAssunto = document.getElementById("assunto").value;
+        var printAssunto = document.getElementById("editAssunto").value;
         document.getElementById("printAssunto").innerHTML = printAssunto;
 
-        var printMensagem = document.getElementById("mensagem").value;
+        var printMensagem = document.getElementById("editMensagem").value;
         document.getElementById("printMensagem").innerHTML = printMensagem;
     }
     $(document).ready(function () {
@@ -90,21 +90,21 @@
             </form>
         </div>
         <div class="column">
-            <form class="ui form">
+           <form class="ui form">
                 <div class="required field">
-                    <p id="printNome" class="print"></p>
+                    <p class="print">Nome: <span id="printNome"></span></p>
                 </div>
                 <div class="required field">
-                    <p id="printEmail" class="print"></p>
+                    <p class="print">Email: <span id="printEmail"></span></p>
                 </div>
                 <div class="required field">
-                    <p id="printTelefone" class="print"></p>
+                    <p class="print">Telefone: <span id="printTelefone"></span></p>
                 </div>
                 <div class="required field">
-                    <p id="printAssunto" class="print"></p>
+                    <p class="print">Assunto: <span id="printAssunto"></span></p>
                 </div>
                 <div class="required field">
-                    <p id="printMensagem" class="print"></p>
+                    <p class="print">Mensagem: <span id="printMensagem"></span></p>
                 </div>
             </form>
         </div>
